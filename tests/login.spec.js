@@ -17,11 +17,15 @@ const loginTestData = [
 
 test.describe('testing login feature', () => {
 
+    let loginPage;
+
+    test.beforeEach( async ({ page }) => {
+        loginPage = new LoginPage(page);
+        await loginPage.navigateToLoginPage();
+    })
+
     test('Happy path, testing successful login', async ({page}) => {
 
-        const loginPage = new LoginPage(page);
-
-        await loginPage.navigateTo();
         await loginPage.login(username, password);
         await loginPage.waitForLoadStateToLoad();
 
@@ -32,16 +36,11 @@ test.describe('testing login feature', () => {
         await expect(loginPage.welcomeText).toHaveText(successfulLoginMessage);
     })
 
-
     loginTestData.forEach(({username, password}) => {
 
         test(`Sad path, testing login wrong username: 
             "${username || 'empty'}" and password: "${password || 'empty'} "`, 
             async ({page}) => {
-
-            const loginPage = new LoginPage(page);
-    
-            await loginPage.navigateTo(); 
 
             await loginPage.login(username, password);
             await loginPage.waitForLoadStateToLoad();

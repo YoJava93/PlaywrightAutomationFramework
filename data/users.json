@@ -1,8 +1,17 @@
 {
-    "admin": {
+    "admin" : {
         "username" : "practice",
         "password" : "SuperSecretPassword!"
       },
+      
+    "users" : {
+        "johnDoe" : "John Doe",
+        "johnDoeEmail" : "JohnDoe@gmail.com"
+    },
+    
+    "keybord" : {
+        "backspace" : "Backspace"
+    },
 
     "wrongUsernameAndPassword": {
       "wrongUsername" : "wrongUsername",
@@ -10,10 +19,10 @@
     },
     
     "messages": {
-
       "successfulLoginMessage" : "You logged into a secure area!",
       "successfulTitleMessage" : "Secure Page page for Automation Testing Practice",
-      "errorLoginMessage" : "Your (username|password) is invalid!"
+      "errorLoginMessage" : "Your (username|password) is invalid!",
+      "youAreSubscribeMessage" : "You are now subscribed!"
     }
     
 }

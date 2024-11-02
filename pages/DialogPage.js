@@ -11,7 +11,7 @@ class DialogPage extends BasePage {
         this.dialogResponseMessage = page.locator('#dialog-response');
     }
 
-    async navigateTo() {
+    async navigateToDialogPage() {
         await this.page.goto('/js-dialogs')
     }
 }

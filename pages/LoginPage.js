@@ -15,7 +15,7 @@ class LoginPage extends BasePage {
         this.errorText = page.locator('#flash')
     }
 
-    async navigateTo() {
+    async navigateToLoginPage() {
         await this.page.goto('/login');
     }
 
