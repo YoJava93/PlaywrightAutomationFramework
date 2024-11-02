@@ -1,4 +1,4 @@
-const BasePage = require('../pages/BasePage');
+const BasePage = require("./BasePage")
 
 
 class LoginPage extends BasePage {
@@ -12,6 +12,7 @@ class LoginPage extends BasePage {
         this.homeButton = page.locator('//li[@class="breadcrumb-item"]');
         this.logoutButton = page.locator('//i[@class="icon-2x icon-signout"]');
         this.welcomeText = page.locator('//b[normalize-space()="You logged into a secure area!"]');
+        this.errorText = page.locator('#flash')
     }
 
     async navigateTo() {

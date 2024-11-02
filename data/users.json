@@ -1,6 +1,19 @@
 {
     "admin": {
-        "username": "practice",
-        "password": "SuperSecretPassword!"
-      }
+        "username" : "practice",
+        "password" : "SuperSecretPassword!"
+      },
+
+    "wrongUsernameAndPassword": {
+      "wrongUsername" : "wrongUsername",
+      "wrongPassword" : "wrongPassword"
+    },
+    
+    "messages": {
+
+      "successfulLoginMessage" : "You logged into a secure area!",
+      "successfulTitleMessage" : "Secure Page page for Automation Testing Practice",
+      "errorLoginMessage" : "Your (username|password) is invalid!"
+    }
+    
 }

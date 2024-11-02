@@ -1,0 +1,13 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","7943","Sad path, testing login wrong username: 
+            ""practice"" and password: ""empty ""","chromium","Sat Nov 02 10:41:03 PDT 2024","passed","Sat Nov 02 10:41:10 PDT 2024","testing login feature","login.spec.js","",""
+"","13202","Sad path, testing login wrong username: 
+            ""wrongUsername"" and password: ""SuperSecretPassword! ""","chromium","Sat Nov 02 10:40:55 PDT 2024","passed","Sat Nov 02 10:41:08 PDT 2024","testing login feature","login.spec.js","",""
+"","7090","Testing JS Confirm","chromium","Sat Nov 02 10:40:55 PDT 2024","passed","Sat Nov 02 10:41:02 PDT 2024","Testing 3 type of dialogs, JS Alert, JS Confirm and JS Prompt","dialog.spec.js","",""
+"","8201","Sad path, testing login wrong username: 
+            ""empty"" and password: ""SuperSecretPassword! ""","chromium","Sat Nov 02 10:41:02 PDT 2024","passed","Sat Nov 02 10:41:10 PDT 2024","testing login feature","login.spec.js","",""
+"","8360","Sad path, testing login wrong username: 
+            ""practice"" and password: ""wrongPassword ""","chromium","Sat Nov 02 10:41:02 PDT 2024","passed","Sat Nov 02 10:41:10 PDT 2024","testing login feature","login.spec.js","",""
+"","7524","Testing JS Allert","chromium","Sat Nov 02 10:40:55 PDT 2024","passed","Sat Nov 02 10:41:02 PDT 2024","Testing 3 type of dialogs, JS Alert, JS Confirm and JS Prompt","dialog.spec.js","",""
+"","6854","Testing JS Prompt","chromium","Sat Nov 02 10:40:55 PDT 2024","passed","Sat Nov 02 10:41:02 PDT 2024","Testing 3 type of dialogs, JS Alert, JS Confirm and JS Prompt","dialog.spec.js","",""
+"","13135","Happy path, testing successful login","chromium","Sat Nov 02 10:40:55 PDT 2024","passed","Sat Nov 02 10:41:08 PDT 2024","testing login feature","login.spec.js","",""

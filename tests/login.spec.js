@@ -2,20 +2,54 @@ const {test, expect} = require('@playwright/test')
 const LoginPage = require('../pages/LoginPage')
 const userdata = require('../data/users.json');
 
+const { username, password } = userdata.admin;
+const { wrongUsername, wrongPassword } = userdata.wrongUsernameAndPassword;
+const { successfulLoginMessage, successfulTitleMessage } = userdata.messages;
 
-test.describe('testing login', () => {
+const errorLoginMessageRegex = new RegExp(userdata.messages.errorLoginMessage);
+
+const loginTestData = [
+    { username: wrongUsername, password : password }, 
+    { username: username, password : wrongPassword },
+    { username: "", password : password },
+    { username: username, password : "" }   
+]
+
+test.describe('testing login feature', () => {
+
     test('Happy path, testing successful login', async ({page}) => {
 
         const loginPage = new LoginPage(page);
-        const {username, password} = userdata.admin;
 
-        await loginPage.navigateTo(); 
+        await loginPage.navigateTo();
         await loginPage.login(username, password);
+        await loginPage.waitForLoadStateToLoad();
 
-        await expect(page).toHaveTitle('Secure Page page for Automation Testing Practice');
+        await expect(page).toHaveTitle(successfulTitleMessage);
         
         await expect(loginPage.homeButton).toBeVisible();
         await expect(loginPage.logoutButton).toBeVisible();
-        await expect(loginPage.welcomeText).toHaveText('You logged into a secure area!');
+        await expect(loginPage.welcomeText).toHaveText(successfulLoginMessage);
     })
+
+
+    loginTestData.forEach(({username, password}) => {
+
+        test(`Sad path, testing login wrong username: 
+            "${username || 'empty'}" and password: "${password || 'empty'} "`, 
+            async ({page}) => {
+
+            const loginPage = new LoginPage(page);
+    
+            await loginPage.navigateTo(); 
+
+            await loginPage.login(username, password);
+            await loginPage.waitForLoadStateToLoad();
+            
+            await expect(loginPage.logoutButton).not.toBeVisible();
+
+            await expect(loginPage.errorText).toContainText(errorLoginMessageRegex);
+        })
+    })   
+
 })
